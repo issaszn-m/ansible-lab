@@ -49,3 +49,13 @@
       state: latest
     when: ansible_distribution == "Ubuntu"
 
+- hosts: file_servers
+  become: true
+  tasks:
+
+  - name: install samba server on Rocky
+    package:
+      name:
+         - samba
+      state: latest
+    when: ansible_distribution == "Rocky"
